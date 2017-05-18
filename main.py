@@ -53,6 +53,8 @@ if __name__ == '__main__':
     parser.add_argument('--images_output_step', type=int, default=10, help='Indicates step for images saving')
     parser.add_argument('--images_output_format', type=str, default='.jpg', help='Indicates step for images saving')
     parser.add_argument('--images_output', type=str, help='Path to directory with training samples output')
+    parser.add_argument('--vgg', type=str, default="vgg/tensorflow-vgg16/vgg16.tfmodel",
+                        help='Contains path to vgg-16 model')
 
     """
         CLI arguments for validation & colorizing

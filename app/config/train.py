@@ -19,6 +19,11 @@ class Train:
         self.configs['id'] = config.fetch(index='model_id')
         if self.configs['id'] is None:
             raise ValueError('Model ID is required')
+
+        self.configs['vgg'] = config.fetch(index='vgg')
+        if self.configs['vgg'] is None:
+            raise ValueError('Path to directory with VGG-16 must be specified')
+
         self.configs['dir'] = config.fetch(index='model_dir')
         if self.configs['dir'] is None:
             raise ValueError('Path to directory with models must be specified')

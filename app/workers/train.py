@@ -96,7 +96,7 @@ class Train:
         # This pass will is only for first training
         # Every training continuation will use model generated from VGG-16
         try:
-            with open("vgg/tensorflow-vgg16/vgg16.tfmodel", mode='rb') as file:
+            with open(configs['vgg'], mode='rb') as file:
                 print('Loaded VGG-16 model')
                 file_content = file.read()
                 graph_def.ParseFromString(file_content)
