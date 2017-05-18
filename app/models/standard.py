@@ -1,5 +1,6 @@
 import tensorflow as tf
-from app.utils import batch_normalize
+
+from app.common.utils import batch_normalize
 from app.models.model import Model
 
 

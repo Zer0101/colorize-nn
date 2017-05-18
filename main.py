@@ -9,7 +9,7 @@ import os
 
 import tensorflow as tf
 
-from app.common import Application
+from app.common.app import Application
 
 FLAGS = None
 

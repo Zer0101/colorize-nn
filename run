@@ -1,0 +1,21 @@
+gcloud ml-engine jobs submit training ${JOB_NAME} \
+  --package-path=. \
+  --module-name=colorize.main \
+  --staging-bucket="${TRAIN_BUCKET}" \
+  --region=us-central1 \
+  -- \
+  --vgg=${TRAIN_BUCKET}/machine_learning/colorize/v1/vgg/tensorflow-vgg16/vgg16.tfmodel \
+  --model_id=${JOB_NAME} \
+  --model_learning_rate_step=10000 \
+  --model_epochs=25 \
+  --model_save=true \
+  --model_save_path=${TRAIN_BUCKET}/machine_learning/colorize/v1/assets/models/ \
+  --model_dir=${TRAIN_BUCKET}/machine_learning/colorize/v1/assets/models/ \
+  --model_log_dir=${TRAIN_BUCKET}/machine_learning/colorize/v1/assets/logs/ \
+  --images_batch_size=10 \
+  --images_input=${TRAIN_BUCKET}/machine_learning/colorize/assets/v1/training_cases/ \
+  --images_output=${TRAIN_BUCKET}/machine_learning/colorize/assets/v1/samples/runs/ \
+  --images_output_enable=true \
+  --images_output_step=500
+
+

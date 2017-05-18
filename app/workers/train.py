@@ -1,13 +1,15 @@
 import os
 import sys
+
 import numpy as np
 import tensorflow as tf
 from matplotlib import pyplot as plt
-from app.lib.pipeline import Pipeline
+
+from app.common.utils import concat_images
 from app.lib.color.image import ImageTransformer
 from app.lib.files.files import Files
+from app.lib.pipeline import Pipeline
 from app.models.standard import Colorize
-from app.utils import concat_images
 
 
 class Train:
